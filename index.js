@@ -71,7 +71,8 @@ class ServerlessPlugin {
       return Promise.resolve();
     }
 
-    const serverlessYmlPath = path.join(servicePath, 'serverless.yml');
+    const serverlessYmlPath = path.join(servicePath, 'serverless.local.yml');
+    
     return this.serverless.yamlParser
       .parse(serverlessYmlPath)
       .then(serverlessFileParam =>
